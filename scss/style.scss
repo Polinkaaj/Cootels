@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import 'nullStyle';
+@font-face {
+    font-family: 'Montserrat';
+    src: local('fonts/Montserrat Semi Bold'), local('fonts/Montserrat-Semi-Bold'), url('fonts/Montserrat-SemiBold.woff2') format('woff2'), url('fonts/Montserrat-SemiBold.woff') format('woff'), url('fonts/Montserrat-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: local('fonts/Inter Medium'), local('fonts/Inter-Medium'), url('fonts/Inter-Medium.woff2') format('woff2'), url('fonts/Inter-Medium.woff') format('woff'), url('fonts/Inter-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: local('fonts/Inter-Bold'), local('fonts/Inter-Bold'), url('fonts/Inter-Bold.woff2') format('woff2'), url('fonts/Inter-Bold.woff') format('woff'), url('fonts/Inter-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: local('fonts/Inter Regular'), local('fonts/Inter-Regular'), url('fonts/Inter-Regular.woff2') format('woff2'), url('fonts/Inter-Regular.woff') format('woff'), url('fonts/Inter-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('fonts/Montserrat Bold'), local('fonts/Montserrat-Bold'), url('fonts/Montserrat-Bold.woff2') format('woff2'), url('fonts/Montserrat-Bold.woff') format('woff'), url('fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+$color: #192252;
+$text-color: #848FAC;
+%alltheheaders {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+}
+
+%text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: $text-color;
+}
+
+%buttons {
+    background: #0E1734;
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 14px 32px;
+}
+
+%container {
+    margin: 0 auto;
+    max-width: 1200px;
+    height: auto;
+    padding: 0;
+    min-width: 537px;
+}
+
+@mixin fontz ($font,
+$style,
+$weight,
+$size,
+$line) {
+    font-family: $font;
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $line;
+}
+
+@mixin flex ($direction) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+}
+
+@mixin margin ($margin) {
+    margin: $margin;
+}
+
+nav {
+    @include fontz('Inter',
+    normal,
+    500,
+    16px,
+    19px);
+    align-items: center;
+}
+
+header {
+    padding: 36px 0;
+    @extend %container;
+    @include flex (row);
+    justify-content: space-between;
+    nav {
+        @include flex(row);
+    }
+}
+
+a {
+    padding: 0px 32px 0px 45px;
+    @include fontz('Inter',
+    normal,
+    500,
+    16px,
+    19px)
+}
+
+.header {
+    font-size: 48px;
+}
+
+h1 {
+    color: $color;
+    @include fontz('Montserrat',
+    normal,
+    600,
+    32px,
+    39px)
+}
+
+button {
+    @include fontz('Inter',
+    normal,
+    500,
+    16px,
+    19px)
+}
+
+.bem {
+    @include flex(column);
+    width: 45%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.bem__header {
+    color: $color;
+    @extend %alltheheaders;
+    margin-bottom: 24px;
+}
+
+.bem__text {
+    @extend %text;
+    margin-bottom: 32px;
+}
+
+.bem__btn {
+    @extend %buttons;
+}
+
+@mixin size ($width) {
+    @extend %text;
+    margin-bottom: 32px;
+    width: $width;
+}
+
+.bem__text_size_s {
+    @include size(50%)
+}
+
+.bem__text_size_m {
+    @include size(90%)
+}
+
+.bem__text_size_ml {
+    @include size(95%)
+}
+
+.bem__text_size_l {
+    @include size(110%)
+}
+
+.secondheader {
+    width: 120%;
+}
+
+.secondtext {
+    margin-bottom: 16px;
+    width: 110%;
+}
+
+.marginleft {
+    margin-left: 126px
+}
+
+.firstbtn {
+    @extend %buttons;
+    padding: 14px 16px;
+}
+
+.first,
+.second,
+.third,
+.fourth,
+.fifth {
+    @extend %container;
+    @include flex(row);
+    margin: 160px auto;
+}
+
+.first {
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+.third1,
+.third2 {
+    @include flex(row);
+    justify-content: space-between;
+}
+
+.second,
+.third2 {
+    justify-content: flex-start;
+}
+
+.third1 {
+    margin-bottom: 32px;
+}
+
+.fourth {
+    justify-content: center;
+}
+
+.center {
+    width: 110%;
+    align-items: center;
+}
+
+.fifth {
+    @include flex(row);
+    justify-content: space-around;
+    padding: 0;
+    margin-bottom: 80px;
+    img {
+        width: 384px;
+    }
+}
+
+.f {
+    width: 384px;
+    margin-left: 24px;
+}
+
+.ffirst {
+    margin-left: 0;
+}
+
+.bem_bemlast {
+    @include flex(column);
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.rooms {
+    @include fontz('Montserrat',
+    normal,
+    600,
+    24px,
+    150%);
+    color: #000;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+.learnmore {
+    @include flex(row);
+    img {
+        width: 16px;
+        margin-left: 13px;
+    }
+}
+
+.foooter {
+    background-color: $color;
+}
+
+.footer {
+    @extend%container;
+    @include flex(row);
+    justify-content: space-between;
+    margin-bottom: 120px;
+}
+
+.footer__section {
+    @include flex(column);
+    color: #ffffff;
+    margin-top: 120px;
+    h2 {
+        @include fontz('Montserrat',
+        normal,
+        700,
+        32px,
+        39px)
+    }
+}
+
+.contacts {
+    @include flex(row);
+    margin-top: 36px;
+    i {
+        font-size: 32px;
+        margin-right: 24px;
+    }
+}
+
+.footer__section {
+    p {
+        @include fontz('Inter',
+        normal,
+        400,
+        16px,
+        28px);
+        margin-top: 13px;
+        width: 186px;
+    }
+    .foot-item {
+        @include fontz('Inter',
+        normal,
+        400,
+        16px,
+        19px);
+        margin-top: 24px;
+    }
+}
+
+.firstfooter {
+    @include fontz('Inter',
+    normal,
+    700,
+    16px,
+    19px);
+}
+
+.foot1 {
+    @include flex(row);
+    margin-bottom: 120px;
+    li {
+        margin-left: 100px;
+    }
+}
